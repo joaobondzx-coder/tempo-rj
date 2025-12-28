@@ -1,8 +1,20 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #132042 0%, #0f1834 100%);
-  color: #e8edf7;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: linear-gradient(180deg, #132042 0%, #0f1834 100%);
+  --text: #e8edf7;
+  --card: #162247;
+}
+.light {
+  --bg: #f0f4ff;
+  --text: #222;
+  --card: #fff;
 }
 
 .header {
@@ -13,24 +25,24 @@ body {
   position: sticky;
   top: 0;
 }
-
 .brand { font-weight: bold; color: #4db3ff; }
 .nav { display: flex; gap: 8px; }
 .nav-btn {
   background: #111935;
   border: none;
-  color: #e8edf7;
+  color: var(--text);
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
 }
 .nav-btn.active { background: #182347; }
+.actions { display: flex; gap: 8px; }
 
 .hero {
   position: relative;
   min-height: 300px;
   border-radius: 16px;
-  background: #121b38;
+  background: var(--card);
   margin: 20px 0;
   padding: 20px;
 }
@@ -40,7 +52,7 @@ body {
 .today-card {
   display: flex;
   justify-content: space-between;
-  background: #162247;
+  background: var(--card);
   border-radius: 12px;
   padding: 12px;
   margin-top: 12px;
@@ -55,7 +67,7 @@ body {
   margin-top: 12px;
 }
 .card {
-  background: #121a36;
+  background: var(--card);
   border-radius: 12px;
   padding: 12px;
   text-align: center;
@@ -68,4 +80,3 @@ body {
   border-top: 1px solid #223058;
   color: #b7c3e0;
 }
-
