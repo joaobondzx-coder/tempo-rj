@@ -52,14 +52,4 @@ function render(){
   forecast.forEach(f=>{
     const div=document.createElement("div");
     div.className="card";
-    div.innerHTML=`<div>${f.day} ${f.date.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"})}</div>
-                   <div class="icon">${f.cond.icon}</div>
-                   <div>${f.cond.label}</div>
-                   <div>Máx: ${f.max}°C</div>
-                   <div>Mín: ${f.min}°C</div>`;
-    forecastGrid.appendChild(div);
-  });
-}
-
-document.addEventListener("DOMContentLoaded",render);
-
+    div.innerHTML=`<div>${f.day} ${f.date.toLocaleDateString("pt-BR
