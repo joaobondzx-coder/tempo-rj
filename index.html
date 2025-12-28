@@ -8,53 +8,30 @@
 </head>
 <body>
   <header class="header">
-    <div class="brand">
-      <span class="brand-icon">☁️</span>
-      <span>Tempo RJ</span>
-    </div>
+    <div class="brand">☁️ Tempo RJ</div>
     <nav class="nav">
       <button class="nav-btn active" data-view="home">Hoje</button>
       <button class="nav-btn" data-view="forecast">15 dias</button>
       <button class="nav-btn" data-view="about">Sobre</button>
     </nav>
+    <div class="actions">
+      <button id="toggle-theme">🌙/☀️</button>
+      <button id="refresh-btn">🔄 Atualizar</button>
+    </div>
   </header>
 
   <main id="app">
-    <!-- Hero + Hoje -->
+    <!-- Hoje -->
     <section id="view-home" class="view active">
       <section class="hero">
-        <!-- Silhueta estilizada do Cristo Redentor em SVG -->
-        <svg class="cristo" viewBox="0 0 800 400" aria-hidden="true">
-          <!-- Morro/contorno -->
-          <path d="M0,320 C150,280 240,300 320,310 C420,325 520,350 800,330 L800,400 L0,400 Z" fill="url(#hillGradient)"/>
-          <!-- Cristo simplificado -->
+        <svg class="cristo" viewBox="0 0 800 400">
+          <path d="M0,320 C150,280 240,300 320,310 C420,325 520,350 800,330 L800,400 L0,400 Z" fill="#162247"/>
           <g transform="translate(400,180)">
-            <!-- Corpo -->
-            <rect x="-12" y="-40" width="24" height="80" rx="8" fill="url(#bodyGradient)"/>
-            <!-- Cabeça -->
+            <rect x="-12" y="-40" width="24" height="80" rx="8" fill="#cfd6eb"/>
             <circle cx="0" cy="-56" r="12" fill="#e8edf7"/>
-            <!-- Braços -->
-            <rect x="-120" y="-20" width="240" height="16" rx="8" fill="url(#armGradient)"/>
-            <!-- Manto estilo -->
-            <path d="M-30,0 C-20,20 -10,40 0,40 C10,40 20,20 30,0" fill="rgba(232,237,247,0.25)"/>
+            <rect x="-120" y="-20" width="240" height="16" rx="8" fill="#cfd6eb"/>
           </g>
-          <!-- Gradientes -->
-          <defs>
-            <linearGradient id="hillGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#18223f"/>
-              <stop offset="100%" stop-color="#0e1730"/>
-            </linearGradient>
-            <linearGradient id="bodyGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#cfd6eb"/>
-              <stop offset="100%" stop-color="#9fb0d8"/>
-            </linearGradient>
-            <linearGradient id="armGradient" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#cfd6eb"/>
-              <stop offset="100%" stop-color="#a8b9df"/>
-            </linearGradient>
-          </defs>
         </svg>
-
         <div class="hero-content">
           <h1>Rio de Janeiro</h1>
           <p id="today-date"></p>
@@ -62,21 +39,20 @@
             <div class="today-left">
               <div id="today-icon" class="weather-icon">☀️</div>
               <div>
-                <div id="today-condition" class="condition">Ensolarado</div>
-                <div id="today-temp" class="temp">28°C</div>
+                <div id="today-condition">Ensolarado</div>
+                <div id="today-temp">28°C</div>
               </div>
             </div>
             <div class="today-right">
-              <div class="metric"><span>Máx</span><strong id="today-max">31°C</strong></div>
-              <div class="metric"><span>Mín</span><strong id="today-min">23°C</strong></div>
-              <div class="metric"><span>Chuva</span><strong id="today-rain">20%</strong></div>
-              <div class="metric"><span>Vento</span><strong id="today-wind">14 km/h</strong></div>
+              <div><span>Máx</span><strong id="today-max">31°C</strong></div>
+              <div><span>Mín</span><strong id="today-min">23°C</strong></div>
+              <div><span>Chuva</span><strong id="today-rain">20%</strong></div>
+              <div><span>Vento</span><strong id="today-wind">14 km/h</strong></div>
             </div>
           </div>
         </div>
       </section>
-
-      <section class="subgrid">
+      <section>
         <h2>Próximos dias</h2>
         <div id="next-days" class="cards-grid"></div>
       </section>
@@ -84,39 +60,21 @@
 
     <!-- 15 dias -->
     <section id="view-forecast" class="view">
-      <div class="forecast-header">
-        <h2>Previsão estendida — 15 dias</h2>
-        <p>Dados simulados para demonstração visual.</p>
-      </div>
+      <h2>Previsão estendida — 15 dias</h2>
       <div id="forecast-grid" class="cards-grid lg"></div>
     </section>
 
     <!-- Sobre -->
     <section id="view-about" class="view">
-      <div class="about-card">
-        <h2>Sobre este site</h2>
-        <p>
-          Este é um site de demonstração da previsão do tempo para o Rio de Janeiro,
-          com design inspirado no Cristo Redentor. Os dados são gerados localmente
-          para fins de visualização (sem API externa).
-        </p>
-        <ul class="about-list">
-          <li><strong>Design:</strong> hero com silhueta SVG do Cristo e paleta azul noturna.</li>
-          <li><strong>Conteúdo:</strong> Hoje + próximos 15 dias com condições e temperaturas.</li>
-          <li><strong>Tecnologia:</strong> HTML, CSS e JavaScript puro, mobile-first.</li>
-        </ul>
-      </div>
+      <h2>Sobre</h2>
+      <p>Site de demonstração da previsão do tempo para o Rio de Janeiro, com design inspirado no Cristo Redentor. Dados simulados, mas já preparado para integrar com APIs reais.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <div>Tempo RJ — Demo</div>
-    <div class="footer-right">
-      <span>Atualizado localmente</span>
-    </div>
+    <p>Tempo RJ — Demo</p>
   </footer>
 
   <script src="app.js"></script>
 </body>
 </html>
-
