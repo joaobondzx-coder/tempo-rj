@@ -1,1 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #132042 0%, #0f1834 100%);
+  color: #e8edf7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(18,27,56,0.6);
+  position: sticky;
+  top: 0;
+}
+
+.brand { font-weight: bold; color: #4db3ff; }
+.nav { display: flex; gap: 8px; }
+.nav-btn {
+  background: #111935;
+  border: none;
+  color: #e8edf7;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav-btn.active { background: #182347; }
+
+.hero {
+  position: relative;
+  min-height: 300px;
+  border-radius: 16px;
+  background: #121b38;
+  margin: 20px 0;
+  padding: 20px;
+}
+.cristo { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.2; }
+.hero-content { position: relative; }
+
+.today-card {
+  display: flex;
+  justify-content: space-between;
+  background: #162247;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 12px;
+}
+.weather-icon { font-size: 32px; }
+.today-right { display: flex; gap: 12px; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.card {
+  background: #121a36;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+.card .icon { font-size: 24px; }
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid #223058;
+  color: #b7c3e0;
+}
 
